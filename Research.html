@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Aryan Sharma</title>
+  <meta name="description" content="Research interests and academic direction of Aryan Sharma in aerospace engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --surface:#111216;
+      --text:#f3f4f6;
+      --muted:#9aa0aa;
+      --line:rgba(255,255,255,0.10);
+      --accent:#8cb6ff;
+      --max:1080px;
+      --r:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Inter",sans-serif;
+      background:radial-gradient(circle at top, #14161c 0%, #0b0b0d 45%);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(92%,var(--max));margin:0 auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(11,11,13,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;
+    }
+    .brand{
+      font-size:.95rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    }
+    .links{
+      display:flex;gap:22px;color:var(--muted);font-size:.95rem;
+    }
+    .links a:hover{color:var(--text)}
+    main{padding:72px 0}
+    .eyebrow{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.78rem;
+      margin-bottom:18px;
+    }
+    h1{
+      font-family:"Instrument Serif",serif;
+      font-size:clamp(2.8rem,6vw,4.8rem);
+      font-weight:400;
+      line-height:.98;
+      letter-spacing:-.04em;
+      margin-bottom:18px;
+    }
+    .lead{
+      color:#d7dbe1;
+      max-width:68ch;
+      margin-bottom:34px;
+    }
+    .grid{
+      display:grid;
+      gap:22px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:28px;
+    }
+    h2{
+      font-size:1.18rem;
+      margin-bottom:12px;
+    }
+    .card p{
+      color:#d8dce2;
+      margin-bottom:14px;
+    }
+    ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+    }
+    li::before{
+      content:"— ";
+      color:var(--accent);
+    }
+    footer{
+      padding:0 0 40px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    @media (max-width:860px){
+      .nav{flex-direction:column;align-items:flex-start;gap:12px}
+      .links{flex-wrap:wrap;gap:14px}
+      .card{padding:22px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">Aryan Sharma</a>
+      <nav class="links">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="eyebrow">Research</div>
+    <h1>Research interests and developing academic direction.</h1>
+    <p class="lead">
+      This page is meant for research interests, papers, technical writing, and future publication-oriented work. It gives your site a clearer academic identity than placing everything on the homepage.
+    </p>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Current Interests</h2>
+        <p>
+          My current research direction is centered on guidance, navigation and control, spacecraft autonomy, orbital analysis, trajectory optimization, and spacecraft control. I am especially interested in technically demanding work where mathematical modeling and mission-level reasoning meet.
+        </p>
+        <ul>
+          <li>GNC and control-oriented aerospace systems.</li>
+          <li>Astrodynamics and orbital mechanics as a long-term technical base.</li>
+          <li>Autonomy and optimization in future space systems work.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Research Paper Section</h2>
+        <p>
+          Use this section to host summaries of papers you write, papers you co-author, or literature reviews you want to showcase. If you later publish a PDF, you can place a direct link to it here.
+        </p>
+        <ul>
+          <li>Add title, date, abstract, and PDF link.</li>
+          <li>Include a short note on the problem, method, and relevance.</li>
+          <li>Keep the presentation concise and technically clear.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Long-Term Direction</h2>
+        <p>
+          Over time, this page can become a record of your transition from student projects into more research-centered aerospace work. It should show increasing rigor, clearer specialization, and a stronger connection between your project work and academic goals.
+        </p>
+        <ul>
+          <li>Use the page to reflect technical depth rather than generic ambition.</li>
+          <li>Connect project work to future control and orbital systems research.</li>
+          <li>Keep the writing mature, precise, and focused.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    Add paper links, abstracts, and research updates here as they develop.
+  </footer>
+</body>
+</html>
