@@ -5,26 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryan Sharma | Aerospace Engineering</title>
   <meta name="description" content="Personal website of Aryan Sharma, aerospace engineering student focused on GNC, autonomy, astrodynamics, and spacecraft control." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0b0d;
-      --surface:#111216;
-      --text:#f3f4f6;
-      --muted:#9aa0aa;
-      --line:rgba(255,255,255,0.10);
-      --accent:#8cb6ff;
+      --bg:#0a0c10;
+      --surface:#11151b;
+      --surface-2:#161b22;
+      --text:#edf2f7;
+      --muted:#98a2b3;
+      --line:rgba(255,255,255,0.08);
+      --accent:#6ea8ff;
       --max:980px;
-      --radius:28px;
+      --radius:24px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family:"Inter",sans-serif;
-      background:radial-gradient(circle at top, #14161c 0%, #0b0b0d 45%);
+      font-family:"IBM Plex Sans",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(110,168,255,0.08) 0%, transparent 28%),
+        linear-gradient(180deg, #0a0c10 0%, #090b0f 100%);
       color:var(--text);
       line-height:1.7;
       min-height:100vh;
@@ -41,8 +46,8 @@
       position:sticky;
       top:0;
       z-index:20;
-      backdrop-filter:blur(16px);
-      background:rgba(11,11,13,.78);
+      backdrop-filter:blur(14px);
+      background:rgba(10,12,16,0.78);
       border-bottom:1px solid var(--line);
     }
 
@@ -50,23 +55,24 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:18px 0;
       gap:20px;
+      padding:18px 0;
     }
 
     .brand{
-      font-size:.95rem;
-      font-weight:600;
-      letter-spacing:.08em;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:0.95rem;
+      font-weight:700;
+      letter-spacing:0.08em;
       text-transform:uppercase;
     }
 
     .links{
       display:flex;
       gap:22px;
-      color:var(--muted);
-      font-size:.95rem;
       flex-wrap:wrap;
+      color:var(--muted);
+      font-size:0.95rem;
     }
 
     .links a:hover{
@@ -77,38 +83,40 @@
       display:grid;
       align-items:center;
       min-height:calc(100vh - 78px);
-      padding:56px 0 72px;
+      padding:60px 0 72px;
     }
 
     .about-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:40px;
+      box-shadow:0 24px 60px rgba(0,0,0,0.24);
     }
 
     .eyebrow{
       color:var(--accent);
       text-transform:uppercase;
-      letter-spacing:.14em;
-      font-size:.78rem;
+      letter-spacing:0.14em;
+      font-size:0.78rem;
+      font-weight:600;
       margin-bottom:18px;
     }
 
     h1{
-      font-family:"Instrument Serif",serif;
-      font-size:clamp(3rem,8vw,5.8rem);
-      font-weight:400;
-      line-height:.95;
-      letter-spacing:-.045em;
-      max-width:8ch;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(2.5rem,6vw,4.6rem);
+      font-weight:700;
+      line-height:1.02;
+      letter-spacing:-0.04em;
+      max-width:11ch;
       margin-bottom:24px;
     }
 
     .about-card p{
-      color:#d8dce2;
-      max-width:66ch;
-      font-size:1.03rem;
+      color:#d6dbe3;
+      max-width:68ch;
+      font-size:1.02rem;
       margin-bottom:18px;
     }
 
@@ -117,10 +125,28 @@
       color:var(--muted);
     }
 
+    .data-line{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+    }
+
+    .chip{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,0.02);
+      font-size:0.9rem;
+    }
+
     footer{
       padding:0 0 36px;
       color:var(--muted);
-      font-size:.92rem;
+      font-size:0.92rem;
     }
 
     @media (max-width:780px){
@@ -135,6 +161,10 @@
 
       .about-card{
         padding:24px;
+      }
+
+      h1{
+        max-width:100%;
       }
     }
   </style>
@@ -155,19 +185,26 @@
   <main class="container">
     <section class="about-card">
       <div class="eyebrow">About Me</div>
-      <h1>Aerospace engineering with a long-range technical direction.</h1>
+      <h1>Aerospace engineering focused on control, autonomy, and orbital systems.</h1>
 
       <p>
         I am Aryan Sharma, an aerospace engineering student at the University of Colorado Boulder with a growing focus on guidance, navigation and control, spacecraft autonomy, astrodynamics, and spacecraft control.
       </p>
 
       <p>
-        My goal is to build a technically serious body of work centered on rigorous analysis, strong engineering judgment, and deeper engagement with orbital and control-focused problems. Over time, I want this website to reflect increasing depth in research, project execution, and aerospace systems thinking.
+        My goal is to build a technically serious body of work centered on rigorous analysis, sound engineering judgment, and deeper engagement with orbital dynamics and control-focused aerospace problems.
       </p>
 
       <p>
         Projects, resume material, and research work are organized in their own dedicated pages through the navigation above.
       </p>
+
+      <div class="data-line">
+        <div class="chip">GNC</div>
+        <div class="chip">Astrodynamics</div>
+        <div class="chip">Autonomy</div>
+        <div class="chip">Spacecraft Control</div>
+      </div>
     </section>
   </main>
 
