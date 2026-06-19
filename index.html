@@ -12,14 +12,14 @@
     :root{
       --bg:#0b0b0d;
       --surface:#111216;
-      --surface-2:#17191f;
       --text:#f3f4f6;
       --muted:#9aa0aa;
       --line:rgba(255,255,255,0.10);
       --accent:#8cb6ff;
-      --max:1080px;
-      --r:24px;
+      --max:980px;
+      --radius:28px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
@@ -27,44 +27,66 @@
       background:radial-gradient(circle at top, #14161c 0%, #0b0b0d 45%);
       color:var(--text);
       line-height:1.7;
+      min-height:100vh;
     }
+
     a{text-decoration:none;color:inherit}
-    .container{width:min(92%,var(--max));margin:0 auto}
+
+    .container{
+      width:min(92%,var(--max));
+      margin:0 auto;
+    }
+
     header{
-      position:sticky;top:0;z-index:20;
+      position:sticky;
+      top:0;
+      z-index:20;
       backdrop-filter:blur(16px);
       background:rgba(11,11,13,.78);
       border-bottom:1px solid var(--line);
     }
+
     .nav{
-      display:flex;justify-content:space-between;align-items:center;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       padding:18px 0;
+      gap:20px;
     }
+
     .brand{
-      font-size:.95rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+      font-size:.95rem;
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
+
     .links{
-      display:flex;gap:22px;color:var(--muted);font-size:.95rem;
+      display:flex;
+      gap:22px;
+      color:var(--muted);
+      font-size:.95rem;
+      flex-wrap:wrap;
     }
-    .links a:hover{color:var(--text)}
+
+    .links a:hover{
+      color:var(--text);
+    }
+
     main{
-      min-height:100vh;
       display:grid;
       align-items:center;
-      padding:72px 0;
+      min-height:calc(100vh - 78px);
+      padding:56px 0 72px;
     }
-    .hero{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:24px;
-      align-items:start;
-    }
-    .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+
+    .about-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
       border:1px solid var(--line);
-      border-radius:var(--r);
-      padding:34px;
+      border-radius:var(--radius);
+      padding:40px;
     }
+
     .eyebrow{
       color:var(--accent);
       text-transform:uppercase;
@@ -72,60 +94,48 @@
       font-size:.78rem;
       margin-bottom:18px;
     }
+
     h1{
       font-family:"Instrument Serif",serif;
-      font-size:clamp(3rem,8vw,6rem);
+      font-size:clamp(3rem,8vw,5.8rem);
       font-weight:400;
-      line-height:.96;
-      letter-spacing:-.04em;
-      max-width:9ch;
+      line-height:.95;
+      letter-spacing:-.045em;
+      max-width:8ch;
+      margin-bottom:24px;
     }
-    .intro{
-      margin-top:24px;
-      max-width:62ch;
-      color:#d7dbe1;
-      font-size:1.04rem;
+
+    .about-card p{
+      color:#d8dce2;
+      max-width:66ch;
+      font-size:1.03rem;
+      margin-bottom:18px;
     }
-    .about{
-      margin-top:22px;
-      color:#d7dbe1;
-    }
-    .menu{
-      display:grid;
-      gap:14px;
-    }
-    .menu a{
-      display:block;
-      padding:18px 20px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:var(--surface);
-      transition:.2s ease;
-    }
-    .menu a:hover{
-      transform:translateY(-2px);
-      border-color:rgba(140,182,255,.35);
-    }
-    .menu strong{
-      display:block;
-      margin-bottom:4px;
-      color:var(--text);
-      font-size:1rem;
-    }
-    .menu span{
+
+    .about-card p:last-child{
+      margin-bottom:0;
       color:var(--muted);
-      font-size:.94rem;
     }
+
     footer{
-      padding:0 0 40px;
+      padding:0 0 36px;
       color:var(--muted);
       font-size:.92rem;
     }
-    @media (max-width:860px){
-      .hero{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start;gap:12px}
-      .links{flex-wrap:wrap;gap:14px}
-      .panel{padding:24px}
+
+    @media (max-width:780px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .links{
+        gap:14px;
+      }
+
+      .about-card{
+        padding:24px;
+      }
     }
   </style>
 </head>
@@ -143,35 +153,21 @@
   </header>
 
   <main class="container">
-    <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">About Me</div>
-        <h1>Aerospace engineering with a long-range technical direction.</h1>
-        <p class="intro">
-          I am Aryan Sharma, an aerospace engineering student at the University of Colorado Boulder with a growing focus on guidance, navigation and control, spacecraft autonomy, astrodynamics, and spacecraft control. My goal is to build a technically serious body of work centered on rigorous analysis, strong engineering judgment, and deeper engagement with orbital and control-focused problems.
-        </p>
-        <p class="about">
-          This website is intended to remain simple and focused. The homepage serves as a short introduction, while the rest of the site separates projects, resume material, and research writing into their own dedicated pages.
-        </p>
-      </div>
+    <section class="about-card">
+      <div class="eyebrow">About Me</div>
+      <h1>Aerospace engineering with a long-range technical direction.</h1>
 
-      <aside class="panel">
-        <div class="eyebrow">Navigation</div>
-        <div class="menu">
-          <a href="projects.html">
-            <strong>Projects</strong>
-            <span>Selected technical work and project summaries.</span>
-          </a>
-          <a href="resume.html">
-            <strong>Resume</strong>
-            <span>Experience, education, skills, and professional profile.</span>
-          </a>
-          <a href="research.html">
-            <strong>Research</strong>
-            <span>Research interests, paper summaries, and academic direction.</span>
-          </a>
-        </div>
-      </aside>
+      <p>
+        I am Aryan Sharma, an aerospace engineering student at the University of Colorado Boulder with a growing focus on guidance, navigation and control, spacecraft autonomy, astrodynamics, and spacecraft control.
+      </p>
+
+      <p>
+        My goal is to build a technically serious body of work centered on rigorous analysis, strong engineering judgment, and deeper engagement with orbital and control-focused problems. Over time, I want this website to reflect increasing depth in research, project execution, and aerospace systems thinking.
+      </p>
+
+      <p>
+        Projects, resume material, and research work are organized in their own dedicated pages through the navigation above.
+      </p>
     </section>
   </main>
 
